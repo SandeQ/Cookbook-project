@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookbook</title>
+</head>
+<body>
+    {% for recipe in all_recipes %}
+    {{recipe.Title}}
+    {{recipe.Ingredients}}
+    {{recipe.Text}}
+    {{recipe.Preparation_Time}}
+    <br>
+    {% endfor %}
+</body>

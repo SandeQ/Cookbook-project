@@ -16,8 +16,13 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from Website.views import Startpage
-
+from Website.views import Dupa
+from Website.views import RecipeAdd
+from Website.views import ShowAll
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^index', Startpage)
+    url(r'^index', Startpage),
+    url(r'^dupa', Dupa),
+    url(r'^addrecipe', RecipeAdd),
+    url(r'^showall', ShowAll)
 ]
