@@ -19,10 +19,16 @@ from Website.views import Startpage
 from Website.views import Dupa
 from Website.views import RecipeAdd
 from Website.views import ShowAll
+from Website.views import RecipeEdit
+from Website.views import GetRecipeID
+from Website.views import DeleteRecipe
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^index', Startpage),
     url(r'^dupa', Dupa),
     url(r'^addrecipe', RecipeAdd),
-    url(r'^showall', ShowAll)
+    url(r'^showall', ShowAll),
+    #url(r'^editrecipe',GetRecipeID),
+    #url(r'^editrecipe/(\d+)?$', RecipeEdit),
+    url(r'^deleterecipe', DeleteRecipe)
 ]
