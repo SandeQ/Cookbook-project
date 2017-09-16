@@ -12,11 +12,11 @@
 {% include "open_back.html"%}
 <nav>
     {% for recipe in all_recipes %}
-        <div id="recipe">
+        <div id="recipe" style="word-wrap: break-word;">
             <p><h3>{{recipe.Title}}</h3></p>
             <p><h4>Składniki: {{recipe.Ingredients}}</h4></p>
             <p><h5>Czas przygotowania:{{recipe.Preparation_Time}}</h5></p>
-            <h2><center>Sposób przygotowania:</center><br> {{recipe.Text}}</h2>
+            <p><h2><center>Sposób przygotowania:</center><br> {{recipe.Text}}</h2></p>
 
             {%if recipe.UserID == request.user.id or request.user.is_superuser%}
                 <button type="button" class="btn btn-primary"><a href="/editrecipe/{{recipe.pk}}"><font color="lightblue">Edytuj ten przepis</font>></a></button><br>
