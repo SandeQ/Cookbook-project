@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookbook</title>
+</head>
+<body>
+{% include "navbar.html" %}
+<form action="register" method="post">
+    {% csrf_token %}
+    <h2><center>Rejestracja nowego użytkownika</center></h2>
+    {{ form.as_p}}
+    <input type="submit" value="Wyślij">
+</form>
+</body>
+</html>

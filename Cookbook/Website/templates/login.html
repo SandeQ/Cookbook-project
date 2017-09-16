@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <title>Log into Cookbook</title>
 </head>
-<body style="background-image: url(/static/food.jpg)">
+<body style="background-image: url(/static/food.jpg);">
 {% include "navbar.html" %}
 {% include "open_back.html" %}
-<form action="addrecipe" method="post">
+<form action="login" method="post">
     {% csrf_token %}
-    <h2><center>Dodawanie przepisu</center></h2>
+    <h2><center>Logowanie</center></h2>
     {{ form.as_p }}
-    <button type="submit" class="btn btn-success" value="Submit"><font color="lightblue">Dodaj przepis <div class="glyphicon glyphicon-ok-circle"></div></font></button>
+    <button type="submit" class="btn btn-success" value="Submit"><font color="lightblue">Zaloguj się</font></button>
+    <br>
         <!--<input type="submit" value="Wyślij" style="color:red;">-->
-</form>
-<br>
+    </form>
 {% include "close_back.html" %}
 </body>
 </html>

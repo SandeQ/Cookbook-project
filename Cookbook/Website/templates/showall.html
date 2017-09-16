@@ -1,15 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <title>Cookbook</title>
+
+
 </head>
-<body>
+<body style="background-image: url(/static/food.jpg);">
+{% include "navbar.html" %}
+{% include "open_back.html"%}
+<nav>
     {% for recipe in all_recipes %}
-    {{recipe.Title}}
-    {{recipe.Ingredients}}
-    {{recipe.Text}}
-    {{recipe.Preparation_Time}}
-    <br>
+        <div id="recipe">
+            <p><h3>{{recipe.Title}}</h3></p>
+            <p><h4>Składniki: {{recipe.Ingredients}}</h4></p>
+            <p><h5>Czas przygotowania:{{recipe.Preparation_Time}}</h5></p>
+            <h2><center>Sposób przygotowania:</center><br> {{recipe.Text}}</h2>
+
+            {%if recipe.UserID == request.user.id or request.user.is_superuser%}
+                <button type="button" class="btn btn-primary"><a href="/editrecipe/{{recipe.pk}}"><font color="lightblue">Edytuj ten przepis</font>></a></button><br>
+                <button type="button" class="btn btn-primary"><a href="/deleterecipe/{{recipe.pk}}"><font color="lightblue">Usun ten przepis</font>></a></button><br>
+
+            {% else %}
+                <button type="button" class="btn btn-danger"><a href="#"}}"><font color="lightblue">Nie mozesz edytowac tego przepisu (Niewystarczające uprawnienia)</font></a></button><br>
+                <button type="button" class="btn btn-danger"><a href="#"><font color="lightblue">Nie mozesz usunac tego przepisu (Niewystarczające uprawnienia)</font></a></button><br>
+            {% endif %}
+            <br>
+        </div>
     {% endfor %}
+</nav>
+{%include "close_back.html"%}
 </body>
+</html>
+
+
+
+<!--TODO
+1. wyświetlanie przepisów jako box
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Thrash, maybe will be useful some time
+
+    <!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">-->
+
+    <!--{% if request.user.id == None %}
+        {{not_logged}}
+        <a href="/login">Zaloguj się</a>
+        <a href="/register">Zarejestruj się</a>
+    {% else %}
+        {{logged}}
+        <a href="/changepassword">Zmień hasło</a>
+        <a href="/logout">Wyloguj</a>
+    {% endif %}-->
+     <!--   {{info}}
+        <a href="{{link1}}">{{button1}}</a>
+        <a href="{{link2}}">{{button2}}</a>-->
+
+
+        <!--{{id}}-->
+
+
+        <!--{{recipe.UserID}}-->

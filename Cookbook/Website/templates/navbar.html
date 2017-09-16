@@ -1,0 +1,37 @@
+<html>
+<head>
+</head>
+<body>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Cookbook</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Strona główna</a></li>
+      <li><a href="/showall">Wszystkie przepisy</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#">{{info}}</a></li>
+      <li><a href="{{link1}}"><span class="glyphicon {{glyph1}}"></span> {{button1}}</a></li>
+      <li><a href="{{link2}}"><span class="glyphicon {{glyph2}}"></span> {{button2}}</a></li>
+    </ul>
+  </div>
+</nav>
+</body>
+</html>
+
+{% block content%}
+
+{%endblock%}
+
+<!--<div style="float: right">
+    {{info}}
+    <a href="{{link1}}">{{button1}}</a>
+    <a href="{{link2}}">{{button2}}</a>
+</div>-->
+
+

@@ -1,13 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <meta charset="UTF-8">
     <title>Moja książka kucharska</title>
+
 </head>
-<body>
-    <div>Hello World</div>
-        <a href="/dupa">Dupa</a>
-    <a href="/addrecipe">Dodaj przepis</a>
-    <a href="/showall">Wyświetl wszystkie przepisy</a>
+<body style="background-image: url(/static/food.jpg);color: white;>
+
+{% include "navbar.html" %}
+{% include "open_back.html" %}
+
+
+
+    <div id="options">
+        <h3><center>Książka kucharska</center></h3>
+        <h4><center>Projekt zaliczeniowy na zakończenie kursu programowania w Pythonie, prowadzonego przez firmę CodersLab</center></h4>
+        <h3><center>Dostępne opcje:</center></h3><br>
+        {% if request.user.id == None %}
+            <center>
+                <div id="content">
+
+                    <h4>Jeśli posiadasz konto:</h4>
+                    <button type="button" class="btn btn-primary"><a href="/login"><font color="lightgreen">Zaloguj się</font>></a></button><br>
+                    <h4>W przeciwnym wypadku:</h4>
+                    <button type="button" class="btn btn-primary"><a href="/register"><font color="lightblue">Zarejestruj się</font>></a></button><br>
+                    <h4>Bez logowania mozesz takze sprawdzić listę wszystkich przepisów: </h4>
+                    <button type="button" class="btn btn-primary"><a href="/showall"><font color="yellow">Sprawdź wszystkie przepisy</font>></a></button><br>
+                </div>
+                <br>
+            </center>
+
+        {% else %}
+
+            <center>
+                <div id="content">
+                    <h4>Możesz dodać swój własny przepis tutaj: </h4>
+                    <button type="button" class="btn btn-primary"><a href="/addrecipe"><font color="lightblue">Dodaj przepis</font>></a></button><br>
+                    <h4>Mozesz zmienic swoje hasło tutaj: </h4>
+                    <button type="button" class="btn btn-primary"><a href="/changepassword"><font color="yellow">Zmień hasło</font></a></button><br>
+                    <h4>Po przejściu do WSZYSTKICH PRZEPISÓW będziesz w stanie edytować lub usuwać własne przepisy:</h4>
+                    <button type="button" class="btn btn-primary"><a href="/showall"><font color="lightgreen">Sprawdź wszystkie przepisy</font>></a></button><br>
+                    <h4>Po zakończeniu pracy mozesz sie wylogować tutaj:</h4>
+                    <button type="button" class="btn btn-primary"><a href="/logout"><font color="red">Wyloguj się</font>></a></button><br>
+                </div>
+                <br>
+            </center>
+
+    {% endif %}
+    </div>
+{% include "close_back.html" %}
+{% include "footer.html" %}
+
 </body>
 </html>

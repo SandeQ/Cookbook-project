@@ -2,13 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Cookbook</title>
+    <title>Log into Cookbook</title>
 </head>
-<body>
-    <form action="editrecipe" method="post">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Wyślij">
-    </form>
+<body style="background-image: url(/static/food.jpg);">
+{% include "navbar.html" %}
+{% include "open_back.html" %}
+<form action="editrecipe" method="post">
+    <font color="#c1ae1d">
+    {% csrf_token %}
+    <h2><center>Edytujesz przepis</center></h2>
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success" value="Submit"><font color="lightblue">Edytuj przepis</font></button>
+    <br>
+        <!--<input type="submit" value="Wyślij" style="color:red;">-->
+    </font>
+</form>
+{% include "close_back.html" %}
 </body>
 </html>
+#CCCC99

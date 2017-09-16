@@ -63,6 +63,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'Website.context_processor.user_data',
+                'Website.context_processor.is_logged',
+                'Website.context_processor.logged_in_info'
             ],
         },
     },
@@ -124,3 +127,7 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#LOGIN URL PATH
+
+LOGIN_URL = '/login/'
