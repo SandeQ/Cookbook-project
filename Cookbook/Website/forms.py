@@ -19,7 +19,7 @@ class EditRecipe(forms.ModelForm):
     prepare_time = forms.IntegerField(label="Podaj czas przyrządzania w minutach")"""
 class Login(forms.Form):
     username = forms.CharField(label='Podaj swój login: ')
-    password = forms.CharField(label='Podaj hasło: ')
+    password = forms.CharField(label='Podaj hasło', widget=forms.PasswordInput)
 class Register(forms.Form):
     login = forms.CharField(label='Podaj swoją nazwę użytkownika: ')
     email = forms.CharField(label='Podaj swój adres e-mail w celu odzyskiwania hasła')
