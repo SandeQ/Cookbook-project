@@ -19,12 +19,14 @@
             <p><h2><center>Sposób przygotowania:</center><br> {{recipe.Text}}</h2></p>
 
             {%if recipe.UserID == request.user.id or request.user.is_superuser%}
-                <button type="button" class="btn btn-primary"><a href="/editrecipe/{{recipe.pk}}"><font color="lightblue">Edytuj ten przepis</font>></a></button><br>
+                <button type="button" class="btn btn-primary"><a href="/editrecipe/{{recipe.pk}}"><font color="lightblue">Edytuj ten przepis</font>></a></button>
                 <button type="button" class="btn btn-primary"><a href="/deleterecipe/{{recipe.pk}}"><font color="lightblue">Usun ten przepis</font>></a></button><br>
 
             {% else %}
-                <button type="button" class="btn btn-danger"><a href="#"}}"><font color="lightblue">Nie mozesz edytowac tego przepisu (Niewystarczające uprawnienia)</font></a></button><br>
-                <button type="button" class="btn btn-danger"><a href="#"><font color="lightblue">Nie mozesz usunac tego przepisu (Niewystarczające uprawnienia)</font></a></button><br>
+
+                <button type="button" class="btn btn-danger"><a href="#"}}"><font color="lightblue">Nie mozesz edytowac tego przepisu<br>(Niewystarczające uprawnienia)</font></a></button>
+                <button type="button" class="btn btn-danger";><a href="#"><font color="lightblue">Nie mozesz usunac tego przepisu <br>(Niewystarczające uprawnienia)</font></a></button><br>
+
             {% endif %}
             <br>
         </div>
