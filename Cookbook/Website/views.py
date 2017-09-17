@@ -109,7 +109,7 @@ class RecipeEdit(LoginRequiredMixin, View):
             return render(request,'403.html', status=403)
 
 
-    def post(self,request):
+    def post(self,request, id):
         recipe = Recipe.objects.get(pk=id)
         edited_recipe = EditRecipe(request.POST,instance=recipe)
         edited_recipe.save()
