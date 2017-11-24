@@ -137,6 +137,9 @@ class ShowAll(View):
         id = request.user.id
         context = {'all_recipes': all_recipes, 'id': id}
         return render (request,'showall.html', context)
+class Bot(View):
+    def get(self,request):
+        return render(request, "bot.html")
 
 
 
