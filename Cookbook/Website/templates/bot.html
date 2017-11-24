@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log into Cookbook</title>
+</head>
+<body style="background-image: url(/static/food.jpg);">
+{% include "navbar.html" %}
+{% include "open_back.html" %}
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
@@ -11,4 +20,8 @@ client.on('message', message => {
   }
 });
 
-client.login('MzgzNzM4Mjg5OTcyMTgzMDUx.DPop_A.9CiWlM7LkV5Hjeee-YOw9nBjd6Q');
+client.login('your token');
+{% include "close_back.html" %}
+{% include "footer.html" %}
+</body>
+</html>
