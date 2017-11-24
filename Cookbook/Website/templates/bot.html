@@ -1,0 +1,14 @@
+const Discord = require('discord.js');
+const client = new Discord.Client();
+
+client.on('ready', () => {
+  console.log('I am ready!');
+});
+
+client.on('message', message => {
+  if (message.content === 'ping') {
+    message.reply('pong');
+  }
+});
+
+client.login('MzgzNzM4Mjg5OTcyMTgzMDUx.DPop_A.9CiWlM7LkV5Hjeee-YOw9nBjd6Q');
