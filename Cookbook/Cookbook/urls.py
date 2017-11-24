@@ -25,6 +25,7 @@ from Website.views import ShowAll
 from Website.views import Dupa
 from Website.views import LogoutUser
 from Website.views import PasswordChange
+from Website.views import Bot
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', Startpage.as_view()),
@@ -37,4 +38,5 @@ urlpatterns = [
     url(r'^showall', ShowAll.as_view()),
     url(r'^dupa', Dupa.as_view()),
     url(r'^logout', LogoutUser.as_view()),
+    url(r'^bot', Bot.as_view())
 ]
